@@ -14,7 +14,7 @@ $categories = $categoriesComponent->getAll();
     <div class="header-main">
         <div class="content-top">
             <div class="form-search-top">
-                <form action="" method="get">
+                <form action="/search/" method="get">
                     <button type="submit"><img class="search" src="/img/search_w.png"></button>
                     <input name="s" placeholder="Поиск..." type="search">
                 </form>

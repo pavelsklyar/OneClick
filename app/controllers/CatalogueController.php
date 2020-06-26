@@ -31,9 +31,17 @@ class CatalogueController extends BaseController
         $categoriesComponent = new CategoriesComponent();
         $category =$categoriesComponent->getByLink($category);
 
-        $products = $this->component->getByCategory($category['id']);
+        $sort = null;
 
-        new View("site/category", $this->page, ['category' => $category, 'products' => $products]);
+        if (!empty($get = $this->page->getGet())) {
+            $sort = isset($get['sort']) ? $get['sort'] : null;
+            $products = $this->component->getByCategorySorted($category['id'], $sort);
+        }
+        else {
+            $products = $this->component->getByCategory($category['id']);
+        }
+
+        new View("site/category", $this->page, ['category' => $category, 'products' => $products, 'sort' => $sort]);
     }
 
     public function item()
