@@ -48,7 +48,9 @@ $categories = $categoriesComponent->getAll();
                     </li>
                 </ul>
             </div>
-            <button class="button-basket" type="submit"><img class="basket" src="/img/basket.png"></button>
+            <a href="/basket/">
+                <button class="button-basket" type="submit"><img class="basket" src="/img/basket.png"></button>
+            </a>
             <?php if (\base\App::$session->user->isAuth()) : ?>
                 <a href="/profile/">
                     <button class="button-person"><img class="person" src="/img/person.png"></button>
