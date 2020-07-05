@@ -5,6 +5,7 @@ use app\controllers\admin\BrandsController;
 use app\controllers\admin\CategoriesController;
 use app\controllers\admin\OrdersController;
 use app\controllers\admin\ProductsController;
+use app\controllers\admin\SponsorsController;
 use app\controllers\AuthController;
 use app\controllers\CatalogueController;
 use app\controllers\OrderController;
@@ -72,9 +73,9 @@ $routing->add('POST', '/profile/admin/brands/add/', BrandsController::class, 'ad
 $routing->add('POST', '/profile/admin/brands/edit/', BrandsController::class, 'edit');
 $routing->add('POST', '/profile/admin/brands/delete/', BrandsController::class, 'delete');
 
-$routing->add('GET', '/profile/admin/sponsors/', BrandsController::class, 'all');
-$routing->add('GET', '/profile/admin/sponsors/add/', BrandsController::class, 'form');
-$routing->add('GET', '/profile/admin/sponsors/edit/{id}', BrandsController::class, 'form');
-$routing->add('POST', '/profile/admin/sponsors/add/', BrandsController::class, 'add');
-$routing->add('POST', '/profile/admin/sponsors/edit/', BrandsController::class, 'edit');
-$routing->add('POST', '/profile/admin/sponsors/delete/', BrandsController::class, 'delete');
+$routing->add('GET', '/profile/admin/sponsors/', SponsorsController::class, 'all');
+$routing->add('GET', '/profile/admin/sponsors/add/', SponsorsController::class, 'form');
+$routing->add('GET', '/profile/admin/sponsors/edit/{id}', SponsorsController::class, 'form');
+$routing->add('POST', '/profile/admin/sponsors/add/', SponsorsController::class, 'add');
+$routing->add('POST', '/profile/admin/sponsors/edit/', SponsorsController::class, 'edit');
+$routing->add('POST', '/profile/admin/sponsors/delete/', SponsorsController::class, 'delete');
